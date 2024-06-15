@@ -7,15 +7,20 @@
 
 import Foundation
 
-struct YogaCategory: Identifiable, Codable, Equatable, Hashable {
+struct YogaCategory: Identifiable, Hashable, Equatable {
     let id: Int
-    let categoryName, categoryDescription: String
+    let name, description: String
     let poses: [YogaPose]
     
-    enum CodingKeys: String, CodingKey {
-        case id
-        case categoryName = "category_name"
-        case categoryDescription = "category_description"
-        case poses
+    init(
+        id: Int,
+        name: String,
+        description: String,
+        poses: [YogaPose]
+    ) {
+        self.id = id
+        self.name = name
+        self.description = description
+        self.poses = poses
     }
 }

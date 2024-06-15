@@ -46,14 +46,14 @@ fileprivate struct YogaCategoryCellView: View {
         HStack {
             VStack {
                 HStack {
-                    Text(category.categoryName)
+                    Text(category.name)
                         .font(.title)
                     
                     Spacer()
                 }
                 
                 HStack {
-                    Text(category.categoryDescription)
+                    Text(category.description)
                         .font(.body)
                     
                     Spacer()

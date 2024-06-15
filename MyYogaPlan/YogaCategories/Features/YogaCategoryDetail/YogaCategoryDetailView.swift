@@ -18,7 +18,7 @@ struct YogaCategoryDetailView: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     Section {
-                        Text(store.category.categoryDescription)
+                        Text(store.category.description)
                             .font(.body)
                     } header: {
                         Text("Description")
@@ -43,7 +43,7 @@ struct YogaCategoryDetailView: View {
                 .padding()
             }
         }
-        .navigationTitle(store.category.categoryName)
+        .navigationTitle(store.category.name)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -53,7 +53,7 @@ fileprivate struct PoseCellView: View {
     
     var body: some View {
         VStack {
-            Text(pose.englishName)
+            Text(pose.name)
                 .font(.headline)
                 .padding(.bottom)
             
@@ -75,7 +75,7 @@ fileprivate struct PoseCellView: View {
             }
             
             // Pose Benefits
-            ForEach(pose.benefitsList, id: \.hashValue) { benefit in
+            ForEach(pose.benefits, id: \.hashValue) { benefit in
                 HStack {
                     Label(benefit, systemImage: "chevron.right.circle.fill")
                         .font(.body)
@@ -96,21 +96,15 @@ fileprivate struct PoseCellView: View {
             initialState: YogaCategoryDetailFeature.State.init(
                 category: .init(
                     id: 1,
-                    categoryName: "Preview Category",
-                    categoryDescription: "Some description",
+                    name: "Preview Category",
+                    description: "Some description",
                     poses: Array(
                         repeating: .init(
                             id: 1,
-                            categoryName: "Category Name",
-                            englishName: "English Name",
-                            sanskritNameAdapted: "",
-                            sanskritName: "",
-                            translationName: "",
-                            poseDescription: "",
-                            poseBenefits: "",
-                            urlSVG: "",
+                            name: "English Name",
+                            description: "Some description",
                             urlPNG: "",
-                            urlSVGAlt: ""
+                            benefits: Array(repeating: "Some benefit", count: 5)
                         ),
                         count: 10
                     )

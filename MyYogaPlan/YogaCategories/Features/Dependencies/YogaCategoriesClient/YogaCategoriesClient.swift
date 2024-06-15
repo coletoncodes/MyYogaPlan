@@ -19,7 +19,7 @@ extension YogaCategoriesClient: DependencyKey {
                 from: URL(string: "https://yoga-api-nzy4.onrender.com/v1/categories")!
             )
             let decoder = JSONDecoder()
-            return try decoder.decode([YogaCategory].self, from: data)
+            return try decoder.decode([YogaCategoryDTO].self, from: data).map(\.asYogaCategory)
         }
     )
 }
