@@ -8,45 +8,27 @@
 import Foundation
 
 
-struct YogaPose: Identifiable, Hashable, Equatable {
+struct YogaPose: Codable, Identifiable, Hashable, Equatable {
     let id: Int
     let name: String
     let description: String
     let urlPNG: String
     let benefits: [String]
+    var isFavorite: Bool = false
     
     init(
         id: Int,
         name: String,
         description: String,
         urlPNG: String,
-        benefits: [String]
+        benefits: [String],
+        isFavorite: Bool
     ) {
         self.id = id
         self.name = name
         self.description = description
         self.urlPNG = urlPNG
         self.benefits = benefits
+        self.isFavorite = isFavorite
     }
-    
-//    var benefitsList: [String] {
-//        self.poseBenefits
-//            .components(separatedBy: ".")
-//            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
-//            .filter { !$0.isEmpty }
-//    }
-//    
-//    enum CodingKeys: String, CodingKey {
-//        case id
-//        case categoryName = "category_name"
-//        case englishName = "english_name"
-//        case sanskritNameAdapted = "sanskrit_name_adapted"
-//        case sanskritName = "sanskrit_name"
-//        case translationName = "translation_name"
-//        case poseDescription = "pose_description"
-//        case poseBenefits = "pose_benefits"
-//        case urlSVG = "url_svg"
-//        case urlPNG = "url_png"
-//        case urlSVGAlt = "url_svg_alt"
-//    }
 }

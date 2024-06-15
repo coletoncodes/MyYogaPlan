@@ -34,7 +34,7 @@ extension YogaCategoriesRepo: DependencyKey {
     }
 }
 
-fileprivate extension YogaCategoryDTO {
+extension YogaCategoryDTO {
     var asYogaCategory: YogaCategory {
         YogaCategory(
             id: self.id,
@@ -45,7 +45,7 @@ fileprivate extension YogaCategoryDTO {
     }
 }
 
-fileprivate extension YogaPoseDTO {
+extension YogaPoseDTO {
     var asYogaPose: YogaPose {
         let benefits = self.poseBenefits
             .components(separatedBy: ".")
@@ -57,7 +57,8 @@ fileprivate extension YogaPoseDTO {
             name: self.englishName,
             description: self.poseDescription,
             urlPNG: self.urlPNG,
-            benefits: benefits
+            benefits: benefits,
+            isFavorite: false
         )
     }
 }
