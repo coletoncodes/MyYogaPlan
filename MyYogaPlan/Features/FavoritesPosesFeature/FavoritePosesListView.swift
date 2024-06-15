@@ -1,0 +1,33 @@
+//
+//  FavoritePosesListView.swift
+//  MyYogaPlan
+//
+//  Created by Coleton Gorecke on 6/15/24.
+//
+
+import SwiftUI
+import ComposableArchitecture
+
+struct FavoritePosesListView: View {
+    @Bindable var store: StoreOf<FavoritePosesFeature>
+    
+    var body: some View {
+        WithPerceptionTracking {
+            NavigationStack {
+                ScrollView {
+                    ForEach(store.favoritePoses) { favoritePose in
+                        PoseCellView(pose: favoritePose) { pose in
+                            store.send(.didFavoritePose(pose))
+                        }
+                    }
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("Favorite Poses")
+            }
+            .onAppear {
+                store.send(.loadFavorites)
+            }
+        }
+    }
+    
+}

@@ -18,9 +18,9 @@ struct FavoritesRepo {
 
 extension FavoritesRepo: DependencyKey {
     static var liveValue: FavoritesRepo {
-        let localStore = FilePersistenceManager<[YogaPose]>(subdirectory: "FavoritesPoses")
+        let localStore: FavoritePosesLocalStore = FilePersistenceManager<[YogaPose]>(subdirectory: "FavoritesPoses")
         
-        let localData = localStore.data
+        let localData = localStore.favorites
         
         return Self(
             favorites: localData ?? [],
@@ -28,11 +28,16 @@ extension FavoritesRepo: DependencyKey {
                 var mutablePose = pose
                 mutablePose.isFavorite.toggle()
                 
-                if var localData {
-                    localData.updateOrAppend(mutablePose)
-                    localStore.save(localData)
+                if pose.isFavorite {
+                    let localData = localStore.favorites
+                    if var localData {
+                        localData.updateOrAppend(mutablePose)
+                        localStore.save(localData)
+                    } else {
+                        localStore.save([mutablePose])
+                    }
                 } else {
-                    localStore.save([mutablePose])
+                    localStore.remove(mutablePose)
                 }
             }, favoritesPublisher: localStore
                 .valueUpdatePublisher

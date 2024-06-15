@@ -11,13 +11,13 @@ import SwiftUI
 @main
 struct MyYogaPlanApp: App {
     
-    static let store = Store(initialState: YogaCategoriesFeature.State()) {
-        YogaCategoriesFeature()
+    static let store = Store(initialState: AppFeature.State()) {
+        AppFeature()
     }
     
     var body: some Scene {
         WindowGroup {
-            YogaCategoriesListView(store: MyYogaPlanApp.store)
+            AppView(store: MyYogaPlanApp.store)
                 .preferredColorScheme(.light)
         }
     }

@@ -55,7 +55,7 @@ struct YogaCategoryDetailView: View {
     }
 }
 
-fileprivate struct PoseCellView: View {
+struct PoseCellView: View {
     let pose: YogaPose
     let onFavoriteToggle: (YogaPose) -> Void
     
