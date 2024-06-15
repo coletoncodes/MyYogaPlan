@@ -25,20 +25,7 @@ extension FavoritesRepo: DependencyKey {
         return Self(
             favorites: localData ?? [],
             save: { pose in
-                var mutablePose = pose
-                mutablePose.isFavorite.toggle()
-                
-                if pose.isFavorite {
-                    let localData = localStore.favorites
-                    if var localData {
-                        localData.updateOrAppend(mutablePose)
-                        localStore.save(localData)
-                    } else {
-                        localStore.save([mutablePose])
-                    }
-                } else {
-                    localStore.remove(mutablePose)
-                }
+                localStore.update(pose)
             }, favoritesPublisher: localStore
                 .valueUpdatePublisher
                 .eraseToAnyPublisher()

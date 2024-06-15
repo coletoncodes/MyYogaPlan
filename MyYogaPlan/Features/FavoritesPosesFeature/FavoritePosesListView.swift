@@ -19,6 +19,7 @@ struct FavoritePosesListView: View {
                         PoseCellView(pose: favoritePose) { pose in
                             store.send(.didFavoritePose(pose))
                         }
+                        .padding()
                     }
                 }
                 .navigationBarTitleDisplayMode(.inline)

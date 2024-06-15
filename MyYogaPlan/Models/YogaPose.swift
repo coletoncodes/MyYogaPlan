@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct YogaPose: Codable, Identifiable, Hashable, Equatable {
     let id: Int
     let name: String

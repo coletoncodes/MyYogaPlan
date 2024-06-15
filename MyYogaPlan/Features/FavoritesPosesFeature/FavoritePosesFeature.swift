@@ -37,7 +37,8 @@ struct FavoritePosesFeature {
                 state.favoritePoses = favoritePoses
                 return .none
                 
-            case let .didFavoritePose(pose):
+            case var .didFavoritePose(pose):
+                pose.isFavorite.toggle()
                 favorites.save(pose)
                 return .none
 

@@ -10,9 +10,8 @@ import MyYogaCore
 import Foundation
 
 protocol FavoritePosesLocalStore {
-    func save(_ object: [YogaPose])
+    func update(_ pose: YogaPose)
     var favorites: [YogaPose]? { get }
-    func remove(_ pose: YogaPose)
     
     var valueUpdatePublisher: AnyPublisher<[YogaPose], Never> { get }
 }
@@ -22,8 +21,21 @@ extension FilePersistenceManager<[YogaPose]>: FavoritePosesLocalStore {
         self.data
     }
     
-    func remove(_ pose: YogaPose) {
+    func update(_ pose: YogaPose) {
+        var data = favorites
+        if pose.isFavorite {
+            data?.updateOrAppend(pose)
+            if let data {
+                self.save(data)
+            }
+        } else {
+            self.remove(pose)
+        }
+    }
+    
+    private func remove(_ pose: YogaPose) {
         if var data = self.data{
+            print("Removing pose: \(pose)")
             data.removeAll(where: { $0.id == pose.id })
             self.save(data)
         }

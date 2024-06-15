@@ -28,12 +28,9 @@ struct YogaCategoryDetailFeature {
         Reduce { state, action in
             switch action {
             case .loadPoses:
-                let favorites = Set(state.favoritePosesState.favoritePoses.map { $0.id })
-                state.poses = state.category.poses.map { pose in
-                    var updatedPose = pose
-                    updatedPose.isFavorite = favorites.contains(pose.id)
-                    return updatedPose
-                }
+                let favorites = Set(state.favoritePosesState.favoritePoses)
+                let categoryPoses = Set(state.category.poses)
+                state.poses = Array(favorites.union(categoryPoses))
                 return .none
                 
             case let .didFavoritePose(pose):

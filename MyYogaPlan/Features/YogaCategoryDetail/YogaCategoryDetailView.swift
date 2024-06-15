@@ -99,6 +99,7 @@ struct PoseCellView: View {
             VStack {
                 HStack {
                     Spacer()
+                    
                     Button(action: { onFavoriteToggle(pose) }) {
                         Image(systemName: pose.isFavorite ? "star.fill" : "star")
                             .foregroundColor(pose.isFavorite ? .yellow : .gray)
