@@ -31,7 +31,7 @@ struct YogaCategoriesListView: View {
                     store.send(.fetchCategories)
                 }
             } destination: { store in
-                CategoryDetailView(store: store)
+                YogaCategoryDetailView(store: store)
             }
         }
     }

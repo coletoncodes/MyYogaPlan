@@ -1,5 +1,5 @@
 //
-//  CategoryDetailView.swift
+//  YogaCategoryDetailView.swift
 //  MyYogaPlan
 //
 //  Created by Coleton Gorecke on 6/14/24.
@@ -9,8 +9,8 @@ import Foundation
 import ComposableArchitecture
 import SwiftUI
 
-struct CategoryDetailView: View {
-    let store: StoreOf<SelectCategoryFeature>
+struct YogaCategoryDetailView: View {
+    let store: StoreOf<YogaCategoryDetailFeature>
     
     var body: some View {
         VStack {
@@ -90,9 +90,9 @@ fileprivate struct PoseCellView: View {
 }
 
 #Preview {
-    CategoryDetailView(
+    YogaCategoryDetailView(
         store: .init(
-            initialState: SelectCategoryFeature.State.init(
+            initialState: YogaCategoryDetailFeature.State.init(
                 category: .init(
                     id: 1,
                     categoryName: "Preview Category",
@@ -117,7 +117,7 @@ fileprivate struct PoseCellView: View {
             )
         )
         {
-            SelectCategoryFeature()
+            YogaCategoryDetailFeature()
         }
     )
 }

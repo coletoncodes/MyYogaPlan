@@ -9,31 +9,6 @@ import ComposableArchitecture
 import Foundation
 
 @Reducer
-struct SelectCategoryFeature {
-    @ObservableState
-    struct State: Equatable {
-        let category: YogaCategory
-        
-        var poses: [YogaPose] {
-            category.poses
-        }
-    }
-    
-    enum Action {
-        case didTapPose
-    }
-    
-    var body: some ReducerOf<Self> {
-        Reduce { _, action in
-            switch action {
-            case .didTapPose:
-                return .none
-            }
-        }
-    }
-}
-
-@Reducer
 struct YogaCategoriesFeature {
     @ObservableState
     struct State: Equatable {
@@ -41,19 +16,19 @@ struct YogaCategoriesFeature {
         var isLoading: Bool = false
         var errorMessage: String?
         
-        var path = StackState<SelectCategoryFeature.State>()
+        var path = StackState<YogaCategoryDetailFeature.State>()
     }
     
     enum Action {
         case fetchCategories
         case categoriesResponse([YogaCategory])
         case didSelectCategory(YogaCategory)
-        case path(StackAction<SelectCategoryFeature.State, SelectCategoryFeature.Action>)
+        case path(StackAction<YogaCategoryDetailFeature.State, YogaCategoryDetailFeature.Action>)
     }
     
     @Reducer(state: .equatable)
     enum Destination {
-        case selectCategory(SelectCategoryFeature)
+        case selectCategory(YogaCategoryDetailFeature)
     }
     
     @Dependency(\.yogaCategoriesClient) private var yogaCategoriesClient
@@ -86,7 +61,7 @@ struct YogaCategoriesFeature {
             }
         }
         .forEach(\.path, action: \.path) {
-            SelectCategoryFeature()
+            YogaCategoryDetailFeature()
         }
     }
 }
