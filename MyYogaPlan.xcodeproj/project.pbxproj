@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		268188E22C1DF02600BDC40A /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 268188E12C1DF02600BDC40A /* ComposableArchitecture */; };
 		2693036B2C1D394900B3C09D /* MyYogaPlanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2693036A2C1D394900B3C09D /* MyYogaPlanApp.swift */; };
 		2693036D2C1D394900B3C09D /* YogaCategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2693036C2C1D394900B3C09D /* YogaCategoriesListView.swift */; };
 		2693036F2C1D394A00B3C09D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2693036E2C1D394A00B3C09D /* Assets.xcassets */; };
 		269303722C1D394A00B3C09D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 269303712C1D394A00B3C09D /* Preview Assets.xcassets */; };
-		2693037A2C1D398B00B3C09D /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 269303792C1D398B00B3C09D /* ComposableArchitecture */; };
 		2693037E2C1D39BC00B3C09D /* YogaCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2693037D2C1D39BC00B3C09D /* YogaCategory.swift */; };
 		269303802C1D39CC00B3C09D /* YogaCategoriesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2693037F2C1D39CC00B3C09D /* YogaCategoriesFeature.swift */; };
 		269303852C1D3EA900B3C09D /* YogaCategoriesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269303842C1D3EA900B3C09D /* YogaCategoriesClient.swift */; };
@@ -19,8 +19,7 @@
 		269303A52C1DE48B00B3C09D /* YogaCategoryDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269303A42C1DE48B00B3C09D /* YogaCategoryDetailFeature.swift */; };
 		269303AA2C1DE5A500B3C09D /* YogaPose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269303A92C1DE5A500B3C09D /* YogaPose.swift */; };
 		269303AF2C1DE6EE00B3C09D /* MyYogaCore in Frameworks */ = {isa = PBXBuildFile; productRef = 269303AE2C1DE6EE00B3C09D /* MyYogaCore */; };
-		269303B32C1DE90D00B3C09D /* YogaCategoryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269303B22C1DE90D00B3C09D /* YogaCategoryDTO.swift */; };
-		269303B52C1DE95F00B3C09D /* YogaPoseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269303B42C1DE95F00B3C09D /* YogaPoseDTO.swift */; };
+		269303B72C1DEC4E00B3C09D /* YogaCategoriesRemoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269303B62C1DEC4E00B3C09D /* YogaCategoriesRemoteStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +35,7 @@
 		269303A42C1DE48B00B3C09D /* YogaCategoryDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCategoryDetailFeature.swift; sourceTree = "<group>"; };
 		269303A92C1DE5A500B3C09D /* YogaPose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaPose.swift; sourceTree = "<group>"; };
 		269303AC2C1DE66700B3C09D /* MyYogaCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MyYogaCore; sourceTree = "<group>"; };
-		269303B22C1DE90D00B3C09D /* YogaCategoryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCategoryDTO.swift; sourceTree = "<group>"; };
-		269303B42C1DE95F00B3C09D /* YogaPoseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaPoseDTO.swift; sourceTree = "<group>"; };
+		269303B62C1DEC4E00B3C09D /* YogaCategoriesRemoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCategoriesRemoteStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2693037A2C1D398B00B3C09D /* ComposableArchitecture in Frameworks */,
+				268188E22C1DF02600BDC40A /* ComposableArchitecture in Frameworks */,
 				269303AF2C1DE6EE00B3C09D /* MyYogaCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,11 +51,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		268188E02C1DF02600BDC40A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2693035E2C1D394900B3C09D = {
 			isa = PBXGroup;
 			children = (
 				269303692C1D394900B3C09D /* MyYogaPlan */,
 				269303682C1D394900B3C09D /* Products */,
+				268188E02C1DF02600BDC40A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +136,7 @@
 			children = (
 				2693037F2C1D39CC00B3C09D /* YogaCategoriesFeature.swift */,
 				2693036C2C1D394900B3C09D /* YogaCategoriesListView.swift */,
+				269303B62C1DEC4E00B3C09D /* YogaCategoriesRemoteStore.swift */,
 			);
 			path = YogaCategories;
 			sourceTree = "<group>";
@@ -146,19 +153,9 @@
 		269303B02C1DE8FB00B3C09D /* YogaCategoriesClient */ = {
 			isa = PBXGroup;
 			children = (
-				269303B12C1DE90600B3C09D /* Models */,
 				269303842C1D3EA900B3C09D /* YogaCategoriesClient.swift */,
 			);
 			path = YogaCategoriesClient;
-			sourceTree = "<group>";
-		};
-		269303B12C1DE90600B3C09D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				269303B22C1DE90D00B3C09D /* YogaCategoryDTO.swift */,
-				269303B42C1DE95F00B3C09D /* YogaPoseDTO.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,8 +175,8 @@
 			);
 			name = MyYogaPlan;
 			packageProductDependencies = (
-				269303792C1D398B00B3C09D /* ComposableArchitecture */,
 				269303AE2C1DE6EE00B3C09D /* MyYogaCore */,
+				268188E12C1DF02600BDC40A /* ComposableArchitecture */,
 			);
 			productName = MyYogaPlan;
 			productReference = 269303672C1D394900B3C09D /* MyYogaPlan.app */;
@@ -210,8 +207,8 @@
 			);
 			mainGroup = 2693035E2C1D394900B3C09D;
 			packageReferences = (
-				269303782C1D398B00B3C09D /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				269303AD2C1DE6EE00B3C09D /* XCLocalSwiftPackageReference "MyYogaPlan/MyYogaCore" */,
+				268188DF2C1DEFC400BDC40A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 269303682C1D394900B3C09D /* Products */;
 			projectDirPath = "";
@@ -239,11 +236,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				269303B32C1DE90D00B3C09D /* YogaCategoryDTO.swift in Sources */,
+				269303B72C1DEC4E00B3C09D /* YogaCategoriesRemoteStore.swift in Sources */,
 				269303852C1D3EA900B3C09D /* YogaCategoriesClient.swift in Sources */,
 				2693037E2C1D39BC00B3C09D /* YogaCategory.swift in Sources */,
 				2693036D2C1D394900B3C09D /* YogaCategoriesListView.swift in Sources */,
-				269303B52C1DE95F00B3C09D /* YogaPoseDTO.swift in Sources */,
 				269303A52C1DE48B00B3C09D /* YogaCategoryDetailFeature.swift in Sources */,
 				269303AA2C1DE5A500B3C09D /* YogaPose.swift in Sources */,
 				2693036B2C1D394900B3C09D /* MyYogaPlanApp.swift in Sources */,
@@ -307,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -364,7 +360,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -397,9 +393,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = coletongorecke.MyYogaPlan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -426,9 +426,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = coletongorecke.MyYogaPlan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -463,7 +467,7 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		269303782C1D398B00B3C09D /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		268188DF2C1DEFC400BDC40A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:pointfreeco/swift-composable-architecture.git";
 			requirement = {
@@ -474,9 +478,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		269303792C1D398B00B3C09D /* ComposableArchitecture */ = {
+		268188E12C1DF02600BDC40A /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 269303782C1D398B00B3C09D /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = 268188DF2C1DEFC400BDC40A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
 		269303AE2C1DE6EE00B3C09D /* MyYogaCore */ = {

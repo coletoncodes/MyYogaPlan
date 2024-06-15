@@ -70,10 +70,6 @@ fileprivate struct YogaCategoryCellView: View {
         .roundedRectBackground()
         .padding()
     }
-    
-    // MARK: - Constants
-    private let cornerRadius: CGFloat = 8.0
-    private let lineWidth: CGFloat = 1.0
 }
 
 #Preview {

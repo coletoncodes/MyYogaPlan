@@ -8,25 +8,25 @@
 import ComposableArchitecture
 import Foundation
 
-struct YogaCategoriesClient {
-    var fetchCategories: () async throws -> [YogaCategory]
-}
-
-extension YogaCategoriesClient: DependencyKey {
-    static let liveValue = Self(
-        fetchCategories: {
-            let (data, _) = try await URLSession.shared.data(
-                from: URL(string: "https://yoga-api-nzy4.onrender.com/v1/categories")!
-            )
-            let decoder = JSONDecoder()
-            return try decoder.decode([YogaCategoryDTO].self, from: data).map(\.asYogaCategory)
-        }
-    )
-}
-
-extension DependencyValues {
-    var yogaCategoriesClient: YogaCategoriesClient {
-        get { self[YogaCategoriesClient.self] }
-        set { self[YogaCategoriesClient.self] = newValue }
-    }
-}
+//struct YogaCategoriesClient {
+//    var fetchCategories: () async throws -> [YogaCategory]
+//}
+//
+//extension YogaCategoriesClient: DependencyKey {
+//    static let liveValue = Self(
+//        fetchCategories: {
+//            let (data, _) = try await URLSession.shared.data(
+//                from: URL(string: "https://yoga-api-nzy4.onrender.com/v1/categories")!
+//            )
+//            let decoder = JSONDecoder()
+//            return try decoder.decode([YogaCategoryDTO].self, from: data).map(\.asYogaCategory)
+//        }
+//    )
+//}
+//
+//extension DependencyValues {
+//    var yogaCategoriesClient: YogaCategoriesClient {
+//        get { self[YogaCategoriesClient.self] }
+//        set { self[YogaCategoriesClient.self] = newValue }
+//    }
+//}
