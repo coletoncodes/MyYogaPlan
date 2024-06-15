@@ -66,10 +66,7 @@ fileprivate struct YogaCategoryCellView: View {
             Label("", systemImage: "chevron.right")
                 .padding(.trailing)
         }
-        .background {
-            RoundedRectangle(cornerRadius: cornerRadius)
-                .stroke(lineWidth: lineWidth)
-        }
+        .roundedRectBackground()
         .padding()
     }
     

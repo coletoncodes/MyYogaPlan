@@ -28,6 +28,10 @@ struct YogaPose: Identifiable, Codable, Equatable, Hashable {
     let urlSVG: String
     let urlPNG: String
     let urlSVGAlt: String
+    
+    var benefitsList: [String] {
+        self.poseBenefits.components(separatedBy: ".")
+    }
 
     enum CodingKeys: String, CodingKey {
         case id
