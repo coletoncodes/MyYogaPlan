@@ -11,7 +11,7 @@ struct YogaCategory: Identifiable, Codable, Equatable, Hashable {
     let id: Int
     let categoryName, categoryDescription: String
     let poses: [YogaPose]
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case categoryName = "category_name"
@@ -30,9 +30,12 @@ struct YogaPose: Identifiable, Codable, Equatable, Hashable {
     let urlSVGAlt: String
     
     var benefitsList: [String] {
-        self.poseBenefits.components(separatedBy: ".")
+        self.poseBenefits
+            .components(separatedBy: ".")
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
     }
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case categoryName = "category_name"

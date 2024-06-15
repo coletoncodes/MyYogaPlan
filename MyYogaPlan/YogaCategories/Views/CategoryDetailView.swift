@@ -32,6 +32,7 @@ struct CategoryDetailView: View {
                     Section {
                         ForEach(store.poses) { pose in
                             PoseCellView(pose: pose)
+                                .padding(.vertical)
                         }
                     } header: {
                         Text("Poses")
@@ -74,8 +75,12 @@ fileprivate struct PoseCellView: View {
             
             // Pose Benefits
             ForEach(pose.benefitsList, id: \.hashValue) { benefit in
-                Label(benefit, systemImage: "chevron.right.circle.fill")
-                    .font(.body)
+                HStack {
+                    Label(benefit, systemImage: "chevron.right.circle.fill")
+                        .font(.body)
+                    
+                    Spacer()
+                }
             }
             .padding(.vertical)
         }
