@@ -72,3 +72,24 @@ struct YogaCategoryDetailFeature {
         }
     }
 }
+
+import SwiftUI
+
+struct YogaCategoryDetailView: View {
+    @Bindable var store: StoreOf<YogaCategoryDetailFeature>
+    
+    var body: some View {
+        WithPerceptionTracking {
+            ScrollView {
+                Section("Description") {
+                    Text(store.category.categoryDescription)
+                        .font(.body)
+                }
+            }
+            .navigationTitle(store.category.categoryName)
+//            .onAppear {
+//                store.send(.fetchPoses)
+//            }
+        }
+    }
+}

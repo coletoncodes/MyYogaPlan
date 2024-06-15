@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2693036B2C1D394900B3C09D /* MyYogaPlanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2693036A2C1D394900B3C09D /* MyYogaPlanApp.swift */; };
-		2693036D2C1D394900B3C09D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2693036C2C1D394900B3C09D /* ContentView.swift */; };
+		2693036D2C1D394900B3C09D /* YogaCategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2693036C2C1D394900B3C09D /* YogaCategoriesListView.swift */; };
 		2693036F2C1D394A00B3C09D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2693036E2C1D394A00B3C09D /* Assets.xcassets */; };
 		269303722C1D394A00B3C09D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 269303712C1D394A00B3C09D /* Preview Assets.xcassets */; };
 		2693037A2C1D398B00B3C09D /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 269303792C1D398B00B3C09D /* ComposableArchitecture */; };
@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		269303672C1D394900B3C09D /* MyYogaPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyYogaPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2693036A2C1D394900B3C09D /* MyYogaPlanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyYogaPlanApp.swift; sourceTree = "<group>"; };
-		2693036C2C1D394900B3C09D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2693036C2C1D394900B3C09D /* YogaCategoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCategoriesListView.swift; sourceTree = "<group>"; };
 		2693036E2C1D394A00B3C09D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		269303712C1D394A00B3C09D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2693037D2C1D39BC00B3C09D /* YogaCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCategory.swift; sourceTree = "<group>"; };
@@ -64,7 +64,6 @@
 				269303862C1D3FDF00B3C09D /* YogaCategoryDetail */,
 				269303832C1D3E8D00B3C09D /* YogaCategories */,
 				2693036A2C1D394900B3C09D /* MyYogaPlanApp.swift */,
-				2693036C2C1D394900B3C09D /* ContentView.swift */,
 				2693036E2C1D394A00B3C09D /* Assets.xcassets */,
 				269303702C1D394A00B3C09D /* Preview Content */,
 			);
@@ -82,6 +81,7 @@
 		269303832C1D3E8D00B3C09D /* YogaCategories */ = {
 			isa = PBXGroup;
 			children = (
+				2693036C2C1D394900B3C09D /* YogaCategoriesListView.swift */,
 				269303842C1D3EA900B3C09D /* YogaCategoriesClient.swift */,
 				2693037F2C1D39CC00B3C09D /* YogaCategoriesFeature.swift */,
 				2693037D2C1D39BC00B3C09D /* YogaCategory.swift */,
@@ -175,7 +175,7 @@
 			files = (
 				269303852C1D3EA900B3C09D /* YogaCategoriesClient.swift in Sources */,
 				2693037E2C1D39BC00B3C09D /* YogaCategory.swift in Sources */,
-				2693036D2C1D394900B3C09D /* ContentView.swift in Sources */,
+				2693036D2C1D394900B3C09D /* YogaCategoriesListView.swift in Sources */,
 				2693036B2C1D394900B3C09D /* MyYogaPlanApp.swift in Sources */,
 				269303802C1D39CC00B3C09D /* YogaCategoriesFeature.swift in Sources */,
 				269303882C1D3FF000B3C09D /* YogaCategoryDetailFeature.swift in Sources */,
