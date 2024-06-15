@@ -18,6 +18,7 @@ struct MyYogaPlanApp: App {
     var body: some Scene {
         WindowGroup {
             YogaCategoriesListView(store: MyYogaPlanApp.store)
+                .preferredColorScheme(.light)
         }
     }
 }

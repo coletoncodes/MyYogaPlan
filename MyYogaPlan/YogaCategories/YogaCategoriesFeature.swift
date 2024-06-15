@@ -9,31 +9,54 @@ import ComposableArchitecture
 import Foundation
 
 @Reducer
+struct SelectCategoryFeature {
+    @ObservableState
+    struct State: Equatable {
+        let category: YogaCategory
+        
+        var poses: [YogaPose] {
+            category.poses
+        }
+    }
+    
+    enum Action {
+        case didTapPose
+    }
+    
+    var body: some ReducerOf<Self> {
+        Reduce { _, action in
+            switch action {
+            case .didTapPose:
+                return .none
+            }
+        }
+    }
+}
+
+@Reducer
 struct YogaCategoriesFeature {
     @ObservableState
     struct State: Equatable {
         var categories: [YogaCategory] = []
-        var selectedCategory: YogaCategory?
         var isLoading: Bool = false
         var errorMessage: String?
-        @Presents var destination: Destination.State?
+        
+        var path = StackState<SelectCategoryFeature.State>()
     }
     
     enum Action {
         case fetchCategories
         case categoriesResponse([YogaCategory])
-        case selectCategory(YogaCategory)
-        case destination(PresentationAction<Destination.Action>)
+        case didSelectCategory(YogaCategory)
+        case path(StackAction<SelectCategoryFeature.State, SelectCategoryFeature.Action>)
     }
     
     @Reducer(state: .equatable)
     enum Destination {
-        case categoryDetail(YogaCategoryDetailFeature)
-        case alert(AlertState<String>)
+        case selectCategory(SelectCategoryFeature)
     }
     
     @Dependency(\.yogaCategoriesClient) private var yogaCategoriesClient
-    @Dependency(\.mainQueue) private var mainQueue
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
@@ -54,27 +77,16 @@ struct YogaCategoriesFeature {
                 state.categories = categories
                 return .none
                 
-            case let .selectCategory(category):
-                state.selectedCategory = category
-                state.destination = .categoryDetail(YogaCategoryDetailFeature.State(category: category))
+            case let .didSelectCategory(category):
+                state.path.append(.init(category: category))
                 return .none
                 
-            case .destination:
+            case .path:
                 return .none
             }
         }
-        .ifLet(\.$destination, action: \.destination)
-    }
-}
-
-extension AlertState where Action == String {
-    static func fetchError(_ message: String) -> Self {
-        Self {
-            TextState(message)
-        } actions: {
-            ButtonState(role: .cancel) {
-                TextState("OK")
-            }
+        .forEach(\.path, action: \.path) {
+            SelectCategoryFeature()
         }
     }
 }

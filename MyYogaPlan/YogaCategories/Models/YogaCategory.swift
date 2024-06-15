@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct YogaCategory: Identifiable, Codable, Equatable {
+struct YogaCategory: Identifiable, Codable, Equatable, Hashable {
     let id: Int
     let categoryName, categoryDescription: String
     let poses: [YogaPose]
@@ -21,7 +21,7 @@ struct YogaCategory: Identifiable, Codable, Equatable {
 }
 
 // MARK: - Pose
-struct YogaPose: Identifiable, Codable, Equatable {
+struct YogaPose: Identifiable, Codable, Equatable, Hashable {
     let id: Int
     let categoryName, englishName, sanskritNameAdapted, sanskritName: String
     let translationName, poseDescription, poseBenefits: String

@@ -15,7 +15,7 @@
 		2693037E2C1D39BC00B3C09D /* YogaCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2693037D2C1D39BC00B3C09D /* YogaCategory.swift */; };
 		269303802C1D39CC00B3C09D /* YogaCategoriesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2693037F2C1D39CC00B3C09D /* YogaCategoriesFeature.swift */; };
 		269303852C1D3EA900B3C09D /* YogaCategoriesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269303842C1D3EA900B3C09D /* YogaCategoriesClient.swift */; };
-		269303882C1D3FF000B3C09D /* YogaCategoryDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269303872C1D3FF000B3C09D /* YogaCategoryDetailFeature.swift */; };
+		2693038C2C1D55C100B3C09D /* CategoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2693038B2C1D55C100B3C09D /* CategoryDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		2693037D2C1D39BC00B3C09D /* YogaCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCategory.swift; sourceTree = "<group>"; };
 		2693037F2C1D39CC00B3C09D /* YogaCategoriesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCategoriesFeature.swift; sourceTree = "<group>"; };
 		269303842C1D3EA900B3C09D /* YogaCategoriesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCategoriesClient.swift; sourceTree = "<group>"; };
-		269303872C1D3FF000B3C09D /* YogaCategoryDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCategoryDetailFeature.swift; sourceTree = "<group>"; };
+		2693038B2C1D55C100B3C09D /* CategoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,6 @@
 		269303692C1D394900B3C09D /* MyYogaPlan */ = {
 			isa = PBXGroup;
 			children = (
-				269303862C1D3FDF00B3C09D /* YogaCategoryDetail */,
 				269303832C1D3E8D00B3C09D /* YogaCategories */,
 				2693036A2C1D394900B3C09D /* MyYogaPlanApp.swift */,
 				2693036E2C1D394A00B3C09D /* Assets.xcassets */,
@@ -81,20 +80,37 @@
 		269303832C1D3E8D00B3C09D /* YogaCategories */ = {
 			isa = PBXGroup;
 			children = (
-				2693036C2C1D394900B3C09D /* YogaCategoriesListView.swift */,
-				269303842C1D3EA900B3C09D /* YogaCategoriesClient.swift */,
 				2693037F2C1D39CC00B3C09D /* YogaCategoriesFeature.swift */,
-				2693037D2C1D39BC00B3C09D /* YogaCategory.swift */,
+				2693038F2C1D56D600B3C09D /* Models */,
+				2693038E2C1D56CE00B3C09D /* Dependencies */,
+				2693038D2C1D56C500B3C09D /* Views */,
 			);
 			path = YogaCategories;
 			sourceTree = "<group>";
 		};
-		269303862C1D3FDF00B3C09D /* YogaCategoryDetail */ = {
+		2693038D2C1D56C500B3C09D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				269303872C1D3FF000B3C09D /* YogaCategoryDetailFeature.swift */,
+				2693038B2C1D55C100B3C09D /* CategoryDetailView.swift */,
+				2693036C2C1D394900B3C09D /* YogaCategoriesListView.swift */,
 			);
-			path = YogaCategoryDetail;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2693038E2C1D56CE00B3C09D /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				269303842C1D3EA900B3C09D /* YogaCategoriesClient.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		2693038F2C1D56D600B3C09D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2693037D2C1D39BC00B3C09D /* YogaCategory.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,7 +194,7 @@
 				2693036D2C1D394900B3C09D /* YogaCategoriesListView.swift in Sources */,
 				2693036B2C1D394900B3C09D /* MyYogaPlanApp.swift in Sources */,
 				269303802C1D39CC00B3C09D /* YogaCategoriesFeature.swift in Sources */,
-				269303882C1D3FF000B3C09D /* YogaCategoryDetailFeature.swift in Sources */,
+				2693038C2C1D55C100B3C09D /* CategoryDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
