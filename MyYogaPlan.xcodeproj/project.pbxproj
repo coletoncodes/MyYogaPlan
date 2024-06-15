@@ -17,6 +17,7 @@
 		269303852C1D3EA900B3C09D /* YogaCategoriesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269303842C1D3EA900B3C09D /* YogaCategoriesClient.swift */; };
 		2693038C2C1D55C100B3C09D /* CategoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2693038B2C1D55C100B3C09D /* CategoryDetailView.swift */; };
 		269303932C1D630600B3C09D /* RoundedRectViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269303922C1D630600B3C09D /* RoundedRectViewModifier.swift */; };
+		269303952C1D6CE600B3C09D /* LoadingViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269303942C1D6CE600B3C09D /* LoadingViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		269303842C1D3EA900B3C09D /* YogaCategoriesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCategoriesClient.swift; sourceTree = "<group>"; };
 		2693038B2C1D55C100B3C09D /* CategoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailView.swift; sourceTree = "<group>"; };
 		269303922C1D630600B3C09D /* RoundedRectViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectViewModifier.swift; sourceTree = "<group>"; };
+		269303942C1D6CE600B3C09D /* LoadingViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				269303922C1D630600B3C09D /* RoundedRectViewModifier.swift */,
+				269303942C1D6CE600B3C09D /* LoadingViewModifier.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				269303932C1D630600B3C09D /* RoundedRectViewModifier.swift in Sources */,
 				2693037E2C1D39BC00B3C09D /* YogaCategory.swift in Sources */,
 				2693036D2C1D394900B3C09D /* YogaCategoriesListView.swift in Sources */,
+				269303952C1D6CE600B3C09D /* LoadingViewModifier.swift in Sources */,
 				2693036B2C1D394900B3C09D /* MyYogaPlanApp.swift in Sources */,
 				269303802C1D39CC00B3C09D /* YogaCategoriesFeature.swift in Sources */,
 				2693038C2C1D55C100B3C09D /* CategoryDetailView.swift in Sources */,

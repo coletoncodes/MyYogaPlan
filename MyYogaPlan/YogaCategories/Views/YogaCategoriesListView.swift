@@ -26,6 +26,7 @@ struct YogaCategoriesListView: View {
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("Yoga Categories")
+                .progressView(isShowing: store.isLoading)
                 .onAppear {
                     store.send(.fetchCategories)
                 }
