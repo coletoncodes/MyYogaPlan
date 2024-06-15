@@ -31,7 +31,7 @@ struct YogaCategoriesFeature {
         case selectCategory(YogaCategoryDetailFeature)
     }
     
-    @Dependency(\.yogaCategoriesClient) private var yogaCategoriesClient
+    @Dependency(\.yogaCategoriesRepo) private var repo
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
@@ -40,7 +40,7 @@ struct YogaCategoriesFeature {
                 state.isLoading = true
                 return .run { send in
                     do {
-                        let categories = try await yogaCategoriesClient.fetchCategories()
+                        let categories = try await repo.fetchCategories()
                         await send(.categoriesResponse(categories))
                     } catch {
                         await send(.categoriesResponse([]))
