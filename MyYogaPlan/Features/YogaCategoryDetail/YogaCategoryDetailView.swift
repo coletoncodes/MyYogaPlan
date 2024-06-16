@@ -133,7 +133,7 @@ struct PoseCellView: View {
                             name: "English Name",
                             description: "Some description",
                             urlPNG: "",
-                            benefits: Array(repeating: "Some benefit", count: 5), isFavorite: false
+                            benefits: Array(repeating: "Some benefit", count: 5)
                         ),
                         count: 10
                     )

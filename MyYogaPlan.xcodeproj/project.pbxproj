@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		268188E22C1DF02600BDC40A /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 268188E12C1DF02600BDC40A /* ComposableArchitecture */; };
 		268188E42C1DF2B900BDC40A /* YogaCategoriesLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268188E32C1DF2B900BDC40A /* YogaCategoriesLocalStore.swift */; };
-		268188E62C1DF70F00BDC40A /* FavoritesRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268188E52C1DF70F00BDC40A /* FavoritesRepo.swift */; };
-		268188E82C1E104300BDC40A /* FavoritePosesLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268188E72C1E104300BDC40A /* FavoritePosesLocalStore.swift */; };
 		268188EB2C1E1A6400BDC40A /* FavoritePosesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268188EA2C1E1A6400BDC40A /* FavoritePosesFeature.swift */; };
 		268188EE2C1E22A800BDC40A /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268188ED2C1E22A800BDC40A /* AppFeature.swift */; };
 		268188F02C1E22FA00BDC40A /* FavoritePosesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268188EF2C1E22FA00BDC40A /* FavoritePosesListView.swift */; };
@@ -31,8 +29,6 @@
 
 /* Begin PBXFileReference section */
 		268188E32C1DF2B900BDC40A /* YogaCategoriesLocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCategoriesLocalStore.swift; sourceTree = "<group>"; };
-		268188E52C1DF70F00BDC40A /* FavoritesRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepo.swift; sourceTree = "<group>"; };
-		268188E72C1E104300BDC40A /* FavoritePosesLocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePosesLocalStore.swift; sourceTree = "<group>"; };
 		268188EA2C1E1A6400BDC40A /* FavoritePosesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePosesFeature.swift; sourceTree = "<group>"; };
 		268188ED2C1E22A800BDC40A /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
 		268188EF2C1E22FA00BDC40A /* FavoritePosesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePosesListView.swift; sourceTree = "<group>"; };
@@ -132,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				269303842C1D3EA900B3C09D /* YogaCategoriesRepo.swift */,
-				268188E52C1DF70F00BDC40A /* FavoritesRepo.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -174,7 +169,6 @@
 			children = (
 				2693038B2C1D55C100B3C09D /* YogaCategoryDetailView.swift */,
 				269303A42C1DE48B00B3C09D /* YogaCategoryDetailFeature.swift */,
-				268188E72C1E104300BDC40A /* FavoritePosesLocalStore.swift */,
 			);
 			path = YogaCategoryDetail;
 			sourceTree = "<group>";
@@ -257,7 +251,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				268188E62C1DF70F00BDC40A /* FavoritesRepo.swift in Sources */,
 				269303B72C1DEC4E00B3C09D /* YogaCategoriesRemoteStore.swift in Sources */,
 				269303852C1D3EA900B3C09D /* YogaCategoriesRepo.swift in Sources */,
 				2693037E2C1D39BC00B3C09D /* YogaCategory.swift in Sources */,
@@ -270,7 +263,6 @@
 				2693036B2C1D394900B3C09D /* MyYogaPlanApp.swift in Sources */,
 				268188E42C1DF2B900BDC40A /* YogaCategoriesLocalStore.swift in Sources */,
 				269303802C1D39CC00B3C09D /* YogaCategoriesFeature.swift in Sources */,
-				268188E82C1E104300BDC40A /* FavoritePosesLocalStore.swift in Sources */,
 				268188EE2C1E22A800BDC40A /* AppFeature.swift in Sources */,
 				2693038C2C1D55C100B3C09D /* YogaCategoryDetailView.swift in Sources */,
 			);

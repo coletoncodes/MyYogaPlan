@@ -14,7 +14,6 @@ struct YogaCategoryDetailFeature {
     struct State: Equatable {
         let category: YogaCategory
         var favoritePosesState: FavoritePosesFeature.State = .init()
-        
         var poses: [YogaPose] = []
     }
     
@@ -22,19 +21,26 @@ struct YogaCategoryDetailFeature {
         case loadPoses
         case didFavoritePose(YogaPose)
         case favoritePosesAction(FavoritePosesFeature.Action)
+        case posesUpdated([YogaPose])
     }
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
             case .loadPoses:
-                let favorites = Set(state.favoritePosesState.favoritePoses)
-                let categoryPoses = Set(state.category.poses)
-                state.poses = Array(favorites.union(categoryPoses))
+                let favoritePoseIDs = Set(state.favoritePosesState.favoritePoses.map { $0.id })
+                state.poses = state.category.poses.map { pose in
+                    var updatedPose = pose
+                    updatedPose.isFavorite = favoritePoseIDs.contains(pose.id)
+                    return updatedPose
+                }
                 return .none
                 
             case let .didFavoritePose(pose):
-                return .send(.favoritePosesAction(.didFavoritePose(pose)))
+                return .concatenate(
+                    .send(.favoritePosesAction(.didFavoritePose(pose))),
+                    .send(.loadPoses)
+                )
                 
             case let .favoritePosesAction(favoriteAction):
                 return FavoritePosesFeature().reduce(
@@ -42,6 +48,10 @@ struct YogaCategoryDetailFeature {
                     action: favoriteAction
                 )
                 .map { _ in .loadPoses }
+                
+            case let .posesUpdated(poses):
+                state.poses = poses
+                return .none
             }
         }
     }

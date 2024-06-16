@@ -57,8 +57,7 @@ extension YogaPoseDTO {
             name: self.englishName,
             description: self.poseDescription,
             urlPNG: self.urlPNG,
-            benefits: benefits,
-            isFavorite: false
+            benefits: benefits
         )
     }
 }

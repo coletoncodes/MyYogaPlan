@@ -12,39 +12,31 @@ import ComposableArchitecture
 struct FavoritePosesFeature {
     @ObservableState
     struct State: Equatable {
-        var favoritePoses: [YogaPose] = []
+        @Shared(.fileStorage(.documentsDirectory.appending(component: "FavoritePoses")))
+        var favoritePoses = Set<YogaPose>()
     }
     
     enum Action: Equatable {
-        case loadFavorites
-        case favoritesLoaded([YogaPose])
+        case favoritesLoaded(Set<YogaPose>)
         case didFavoritePose(YogaPose)
-        case favoritesUpdated([YogaPose])
     }
-    
-    @Dependency(\.favoritesRepo) private var favorites
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .loadFavorites:
-                return .publisher {
-                    favorites.favoritesPublisher
-                        .map(Action.favoritesLoaded)
-                }
-                
             case let .favoritesLoaded(favoritePoses):
                 state.favoritePoses = favoritePoses
                 return .none
                 
             case var .didFavoritePose(pose):
-                pose.isFavorite.toggle()
-                favorites.save(pose)
-                return .none
-
-            case let .favoritesUpdated(favoritePoses):
-                state.favoritePoses = favoritePoses
-                return .none
+                if state.favoritePoses.contains(pose) {
+                    pose.isFavorite = false
+                    state.favoritePoses.remove(pose)
+                } else {
+                    pose.isFavorite = true
+                    state.favoritePoses.insert(pose)
+                }
+                return .send(.favoritesLoaded(state.favoritePoses))
             }
         }
     }

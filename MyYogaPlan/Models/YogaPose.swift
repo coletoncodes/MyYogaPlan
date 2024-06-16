@@ -13,7 +13,15 @@ struct YogaPose: Codable, Identifiable, Hashable, Equatable {
     let description: String
     let urlPNG: String
     let benefits: [String]
-    var isFavorite: Bool = false
+    var isFavorite: Bool
+    
+    static func == (lhs: YogaPose, rhs: YogaPose) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
     
     init(
         id: Int,
@@ -21,7 +29,7 @@ struct YogaPose: Codable, Identifiable, Hashable, Equatable {
         description: String,
         urlPNG: String,
         benefits: [String],
-        isFavorite: Bool
+        isFavorite: Bool = false
     ) {
         self.id = id
         self.name = name

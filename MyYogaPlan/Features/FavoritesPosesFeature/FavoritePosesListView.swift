@@ -15,7 +15,7 @@ struct FavoritePosesListView: View {
         WithPerceptionTracking {
             NavigationStack {
                 ScrollView {
-                    ForEach(store.favoritePoses) { favoritePose in
+                    ForEach(Array(store.favoritePoses)) { favoritePose in
                         PoseCellView(pose: favoritePose) { pose in
                             store.send(.didFavoritePose(pose))
                         }
@@ -25,10 +25,6 @@ struct FavoritePosesListView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("Favorite Poses")
             }
-            .onAppear {
-                store.send(.loadFavorites)
-            }
         }
     }
-    
 }
