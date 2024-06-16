@@ -12,6 +12,7 @@ import Foundation
 struct YogaCategoriesFeature {
     @ObservableState
     struct State: Equatable {
+        @Shared(.fileStorage(.documentsDirectory.appending(component: "YogaCategories.json")))
         var categories: [YogaCategory] = []
         var isLoading: Bool = false
         var errorMessage: String?
@@ -31,19 +32,27 @@ struct YogaCategoriesFeature {
         case selectCategory(YogaCategoryDetailFeature)
     }
     
-    @Dependency(\.yogaCategoriesRepo) private var repo
+    @Dependency(\.yogaCategoriesRemoteStore) private var remoteStore
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
             case .fetchCategories:
-                state.isLoading = true
-                return .run { send in
-                    do {
-                        let categories = try await repo.fetchCategories()
-                        await send(.categoriesResponse(categories))
-                    } catch {
-                        await send(.categoriesResponse([]))
+                if state.categories.isEmpty {
+                    state.isLoading = true
+                    return .run { send in
+                        do {
+                            let categories = try await remoteStore.fetchCategories()
+                            await send(.categoriesResponse(categories))
+                        } catch {
+                            await send(.categoriesResponse([]))
+                        }
+                    }
+                } else {
+                    return .publisher {
+                        state.$categories
+                            .publisher
+                            .map(Action.categoriesResponse)
                     }
                 }
                 

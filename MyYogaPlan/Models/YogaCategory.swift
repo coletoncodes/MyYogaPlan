@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct YogaCategory: Identifiable, Hashable, Equatable {
+struct YogaCategory: Codable, Identifiable, Hashable, Equatable {
     let id: Int
     let name, description: String
     let poses: [YogaPose]

@@ -1,5 +1,5 @@
 //
-//  YogaCategoriesRepo.swift
+//  YogaCategoriesRemoteStore.swift
 //  MyYogaPlan
 //
 //  Created by Coleton Gorecke on 6/14/24.
@@ -9,28 +9,21 @@ import ComposableArchitecture
 import Foundation
 import MyYogaCore
 
-struct YogaCategoriesRepo {
-    var localCategories: [YogaCategory]
+struct YogaCategoriesRemoteStore {
     var fetchCategories: () async throws -> [YogaCategory]
 }
 
-extension YogaCategoriesRepo: DependencyKey {
+extension YogaCategoriesRemoteStore: DependencyKey {
     
-    static var liveValue: YogaCategoriesRepo {
-        let localStore = FilePersistenceManager<[YogaCategoryDTO]>(subdirectory: "YogaCategories")
-        let remoteStore = YogaCategoriesRemoteRepo()
-        
-        let localData = localStore.data
-        
-        return Self(
-            localCategories: localData?.map(\.asYogaCategory) ?? [],
-            fetchCategories: {
-                if let localData { return localData.map(\.asYogaCategory) }
-                let remoteDTOS = try await remoteStore.fetchCategories()
-                localStore.save(remoteDTOS)
-                return remoteDTOS.map(\.asYogaCategory)
+    static var liveValue: YogaCategoriesRemoteStore {
+        Self {
+            do {
+                return try await YogaAPIClient.shared.fetchCategories().map(\.asYogaCategory)
+            } catch {
+                print("Failed to fetch categories with error: \(error)")
+                throw error
             }
-        )
+        }
     }
 }
 
@@ -63,8 +56,8 @@ extension YogaPoseDTO {
 }
 
 extension DependencyValues {
-    var yogaCategoriesRepo: YogaCategoriesRepo {
-        get { self[YogaCategoriesRepo.self] }
-        set { self[YogaCategoriesRepo.self] = newValue }
+    var yogaCategoriesRemoteStore: YogaCategoriesRemoteStore {
+        get { self[YogaCategoriesRemoteStore.self] }
+        set { self[YogaCategoriesRemoteStore.self] = newValue }
     }
 }
