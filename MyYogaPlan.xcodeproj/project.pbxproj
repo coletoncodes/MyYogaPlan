@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2655966F2C1E89C800B66FE6 /* YogaCategoriesFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655966E2C1E89C800B66FE6 /* YogaCategoriesFeatureTests.swift */; };
 		268188E22C1DF02600BDC40A /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 268188E12C1DF02600BDC40A /* ComposableArchitecture */; };
 		268188EB2C1E1A6400BDC40A /* FavoritePosesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268188EA2C1E1A6400BDC40A /* FavoritePosesFeature.swift */; };
 		268188EE2C1E22A800BDC40A /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268188ED2C1E22A800BDC40A /* AppFeature.swift */; };
@@ -25,7 +26,19 @@
 		269303AF2C1DE6EE00B3C09D /* MyYogaCore in Frameworks */ = {isa = PBXBuildFile; productRef = 269303AE2C1DE6EE00B3C09D /* MyYogaCore */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		265596672C1E899500B66FE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2693035F2C1D394900B3C09D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 269303662C1D394900B3C09D;
+			remoteInfo = MyYogaPlan;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		265596632C1E899500B66FE6 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2655966E2C1E89C800B66FE6 /* YogaCategoriesFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCategoriesFeatureTests.swift; sourceTree = "<group>"; };
 		268188EA2C1E1A6400BDC40A /* FavoritePosesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePosesFeature.swift; sourceTree = "<group>"; };
 		268188ED2C1E22A800BDC40A /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
 		268188EF2C1E22FA00BDC40A /* FavoritePosesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePosesListView.swift; sourceTree = "<group>"; };
@@ -45,6 +58,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		265596602C1E899500B66FE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		269303642C1D394900B3C09D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -57,6 +77,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		265596642C1E899500B66FE6 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				2655966D2C1E89AF00B66FE6 /* YogaCategoriesFeatureTests */,
+				2655966C2C1E899D00B66FE6 /* AppFeatureTests */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		2655966C2C1E899D00B66FE6 /* AppFeatureTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppFeatureTests;
+			sourceTree = "<group>";
+		};
+		2655966D2C1E89AF00B66FE6 /* YogaCategoriesFeatureTests */ = {
+			isa = PBXGroup;
+			children = (
+				2655966E2C1E89C800B66FE6 /* YogaCategoriesFeatureTests.swift */,
+			);
+			path = YogaCategoriesFeatureTests;
+			sourceTree = "<group>";
+		};
 		268188E02C1DF02600BDC40A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				269303692C1D394900B3C09D /* MyYogaPlan */,
+				265596642C1E899500B66FE6 /* UnitTests */,
 				269303682C1D394900B3C09D /* Products */,
 				268188E02C1DF02600BDC40A /* Frameworks */,
 			);
@@ -95,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				269303672C1D394900B3C09D /* MyYogaPlan.app */,
+				265596632C1E899500B66FE6 /* UnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +216,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		265596622C1E899500B66FE6 /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 265596692C1E899500B66FE6 /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				2655965F2C1E899500B66FE6 /* Sources */,
+				265596602C1E899500B66FE6 /* Frameworks */,
+				265596612C1E899500B66FE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				265596682C1E899500B66FE6 /* PBXTargetDependency */,
+			);
+			name = UnitTests;
+			productName = MyYogaPlanTests;
+			productReference = 265596632C1E899500B66FE6 /* UnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		269303662C1D394900B3C09D /* MyYogaPlan */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 269303752C1D394A00B3C09D /* Build configuration list for PBXNativeTarget "MyYogaPlan" */;
@@ -198,9 +262,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					265596622C1E899500B66FE6 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 269303662C1D394900B3C09D;
+					};
 					269303662C1D394900B3C09D = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -224,11 +292,19 @@
 			projectRoot = "";
 			targets = (
 				269303662C1D394900B3C09D /* MyYogaPlan */,
+				265596622C1E899500B66FE6 /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		265596612C1E899500B66FE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		269303652C1D394900B3C09D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -241,6 +317,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2655965F2C1E899500B66FE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2655966F2C1E89C800B66FE6 /* YogaCategoriesFeatureTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		269303632C1D394900B3C09D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -262,7 +346,61 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		265596682C1E899500B66FE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 269303662C1D394900B3C09D /* MyYogaPlan */;
+			targetProxy = 265596672C1E899500B66FE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		2655966A2C1E899500B66FE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 435ZY68D35;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = coletongorecke.MyYogaPlanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyYogaPlan.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyYogaPlan";
+			};
+			name = Debug;
+		};
+		2655966B2C1E899500B66FE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 435ZY68D35;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = coletongorecke.MyYogaPlanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyYogaPlan.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyYogaPlan";
+			};
+			name = Release;
+		};
 		269303732C1D394A00B3C09D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -451,6 +589,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		265596692C1E899500B66FE6 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2655966A2C1E899500B66FE6 /* Debug */,
+				2655966B2C1E899500B66FE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		269303622C1D394900B3C09D /* Build configuration list for PBXProject "MyYogaPlan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

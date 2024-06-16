@@ -7,7 +7,20 @@
 		<key>MyYogaPlan.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>265596622C1E899500B66FE6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>269303662C1D394900B3C09D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
