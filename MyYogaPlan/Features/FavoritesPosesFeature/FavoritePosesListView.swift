@@ -14,12 +14,18 @@ struct FavoritePosesListView: View {
     var body: some View {
         WithPerceptionTracking {
             NavigationStack {
-                ScrollView {
-                    ForEach(Array(store.favoritePoses)) { favoritePose in
-                        PoseCellView(pose: favoritePose) { pose in
-                            store.send(.didFavoritePose(pose))
+                Group {
+                    if store.shouldShowFavorites {
+                        ScrollView {
+                            ForEach(Array(store.favoritePoses)) { favoritePose in
+                                PoseCellView(pose: favoritePose) { pose in
+                                    store.send(.didFavoritePose(pose))
+                                }
+                                .padding()
+                            }
                         }
-                        .padding()
+                    } else {
+                        ContentUnavailableView("No Favorites Yet", systemImage: "star.square.fill", description: Text("No favorites have been saved yet."))
                     }
                 }
                 .navigationBarTitleDisplayMode(.inline)

@@ -14,6 +14,8 @@ struct FavoritePosesFeature {
     struct State: Equatable {
         @Shared(.fileStorage(.documentsDirectory.appending(component: "FavoritePoses")))
         var favoritePoses = Set<YogaPose>()
+        
+        var shouldShowFavorites: Bool = false
     }
     
     enum Action: Equatable {
@@ -26,6 +28,7 @@ struct FavoritePosesFeature {
             switch action {
             case let .favoritesLoaded(favoritePoses):
                 state.favoritePoses = favoritePoses
+                state.shouldShowFavorites = !favoritePoses.isEmpty
                 return .none
                 
             case var .didFavoritePose(pose):
