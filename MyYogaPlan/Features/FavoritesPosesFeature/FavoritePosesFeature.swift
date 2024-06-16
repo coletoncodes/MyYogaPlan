@@ -19,6 +19,7 @@ struct FavoritePosesFeature {
     }
     
     enum Action: Equatable {
+        case loadFavorites
         case favoritesLoaded(Set<YogaPose>)
         case didFavoritePose(YogaPose)
     }
@@ -26,6 +27,10 @@ struct FavoritePosesFeature {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+                
+            case .loadFavorites:
+                return .send(.favoritesLoaded(state.favoritePoses))
+                
             case let .favoritesLoaded(favoritePoses):
                 state.favoritePoses = favoritePoses
                 state.shouldShowFavorites = !favoritePoses.isEmpty

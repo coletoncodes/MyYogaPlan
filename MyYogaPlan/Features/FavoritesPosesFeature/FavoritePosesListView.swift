@@ -30,6 +30,9 @@ struct FavoritePosesListView: View {
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("Favorite Poses")
+                .onAppear {
+                    store.send(.loadFavorites)
+                }
             }
         }
     }
