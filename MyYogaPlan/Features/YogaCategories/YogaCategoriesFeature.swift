@@ -15,7 +15,6 @@ struct YogaCategoriesFeature {
         @Shared(.fileStorage(.documentsDirectory.appending(component: "YogaCategories.json")))
         var categories: [YogaCategory] = []
         var isLoading: Bool = false
-        var errorMessage: String?
         
         var path = StackState<YogaCategoryDetailFeature.State>()
     }
@@ -45,15 +44,12 @@ struct YogaCategoriesFeature {
                             let categories = try await remoteStore.fetchCategories()
                             await send(.categoriesResponse(categories))
                         } catch {
+                            print("Failed to fetch categories with error: \(error)")
                             await send(.categoriesResponse([]))
                         }
                     }
                 } else {
-                    return .publisher {
-                        state.$categories
-                            .publisher
-                            .map(Action.categoriesResponse)
-                    }
+                    return .send(.categoriesResponse(state.categories))
                 }
                 
             case let .categoriesResponse(categories):
