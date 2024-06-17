@@ -44,8 +44,11 @@ Uses the open source API from this [GitHub repo](https://github.com/alexcumplido
 
 ### Prerequisites
 
-- Xcode 14 or later
-- Swift 5.7 or later
+- Xcode 15 or later
+- Swift 5.9 or later
+
+### Dependencies
+[The Composable Architecture V1.11.1](https://github.com/pointfreeco/swift-composable-architecture)
 
 ### Installation
 
