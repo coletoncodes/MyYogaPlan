@@ -9,12 +9,8 @@
 import ComposableArchitecture
 import XCTest
 
-@MainActor
-final class YogaCategoriesFeatureTests: XCTestCase {
-    private var store: TestStore<YogaCategoriesFeature.State, YogaCategoriesFeature.Action>!
-    
-    // MARK: - Helpers
-    private func buildMockData(of count: Int) -> [YogaCategory] {
+extension YogaCategory {
+    static func buildMockData(of count: Int) -> [YogaCategory] {
         var array: [YogaCategory] = []
         for i in 1...count {
             array.append(
@@ -30,10 +26,16 @@ final class YogaCategoriesFeatureTests: XCTestCase {
         }
         return array
     }
+}
+
+@MainActor
+final class YogaCategoriesFeatureTests: XCTestCase {
+    private var store: TestStore<YogaCategoriesFeature.State, YogaCategoriesFeature.Action>!
     
     // MARK: - Tests
     func testFetchCategories() async throws {
-        let mockData = buildMockData(of: 2)
+        let mockData = YogaCategory.buildMockData(of: 2)
+        
         store = TestStore(initialState: YogaCategoriesFeature.State()) {
             YogaCategoriesFeature()
         } withDependencies: {
@@ -54,7 +56,7 @@ final class YogaCategoriesFeatureTests: XCTestCase {
     }
     
     func testDidSelectCategory() async throws {
-        let mockData = buildMockData(of: 2)
+        let mockData = YogaCategory.buildMockData(of: 2)
         
         store = TestStore(initialState: YogaCategoriesFeature.State()) {
             YogaCategoriesFeature()
@@ -93,9 +95,9 @@ final class YogaCategoriesFeatureTests: XCTestCase {
     }
     
     func testFetchCategoriesFromState() async throws {
-        let mockData = buildMockData(of: 2)
+        let mockData = YogaCategory.buildMockData(of: 2)
         let initialState = YogaCategoriesFeature.State(categories: mockData)
-        store = TestStore(initialState: YogaCategoriesFeature.State()) {
+        store = TestStore(initialState: initialState) {
             YogaCategoriesFeature()
         } withDependencies: {
             $0.yogaCategoriesRemoteStore = YogaCategoriesRemoteStore(fetchCategories: {
@@ -108,7 +110,6 @@ final class YogaCategoriesFeatureTests: XCTestCase {
         // assert we recieve a response
         await store.receive(\.categoriesResponse, timeout: 1)
     }
-    
 }
 
 enum MockError: Error {

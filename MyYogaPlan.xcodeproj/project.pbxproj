@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2655966F2C1E89C800B66FE6 /* YogaCategoriesFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655966E2C1E89C800B66FE6 /* YogaCategoriesFeatureTests.swift */; };
+		265596722C1FDE4F00B66FE6 /* YogaCategoryDetailFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265596712C1FDE4F00B66FE6 /* YogaCategoryDetailFeatureTests.swift */; };
 		268188E22C1DF02600BDC40A /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 268188E12C1DF02600BDC40A /* ComposableArchitecture */; };
 		268188EB2C1E1A6400BDC40A /* FavoritePosesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268188EA2C1E1A6400BDC40A /* FavoritePosesFeature.swift */; };
 		268188EE2C1E22A800BDC40A /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268188ED2C1E22A800BDC40A /* AppFeature.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		265596632C1E899500B66FE6 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2655966E2C1E89C800B66FE6 /* YogaCategoriesFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCategoriesFeatureTests.swift; sourceTree = "<group>"; };
+		265596712C1FDE4F00B66FE6 /* YogaCategoryDetailFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCategoryDetailFeatureTests.swift; sourceTree = "<group>"; };
 		268188EA2C1E1A6400BDC40A /* FavoritePosesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePosesFeature.swift; sourceTree = "<group>"; };
 		268188ED2C1E22A800BDC40A /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
 		268188EF2C1E22FA00BDC40A /* FavoritePosesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePosesListView.swift; sourceTree = "<group>"; };
@@ -80,25 +82,18 @@
 		265596642C1E899500B66FE6 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				2655966D2C1E89AF00B66FE6 /* YogaCategoriesFeatureTests */,
-				2655966C2C1E899D00B66FE6 /* AppFeatureTests */,
+				265596702C1FDE3700B66FE6 /* Features */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
 		};
-		2655966C2C1E899D00B66FE6 /* AppFeatureTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AppFeatureTests;
-			sourceTree = "<group>";
-		};
-		2655966D2C1E89AF00B66FE6 /* YogaCategoriesFeatureTests */ = {
+		265596702C1FDE3700B66FE6 /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				2655966E2C1E89C800B66FE6 /* YogaCategoriesFeatureTests.swift */,
+				265596712C1FDE4F00B66FE6 /* YogaCategoryDetailFeatureTests.swift */,
 			);
-			path = YogaCategoriesFeatureTests;
+			path = Features;
 			sourceTree = "<group>";
 		};
 		268188E02C1DF02600BDC40A /* Frameworks */ = {
@@ -322,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2655966F2C1E89C800B66FE6 /* YogaCategoriesFeatureTests.swift in Sources */,
+				265596722C1FDE4F00B66FE6 /* YogaCategoryDetailFeatureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
