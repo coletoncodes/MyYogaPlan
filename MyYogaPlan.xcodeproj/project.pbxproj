@@ -11,6 +11,7 @@
 		265596722C1FDE4F00B66FE6 /* YogaCategoryDetailFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265596712C1FDE4F00B66FE6 /* YogaCategoryDetailFeatureTests.swift */; };
 		265596742C1FE62800B66FE6 /* FavoritePosesFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265596732C1FE62800B66FE6 /* FavoritePosesFeatureTests.swift */; };
 		265596762C1FEA3A00B66FE6 /* AppFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265596752C1FEA3A00B66FE6 /* AppFeatureTests.swift */; };
+		265596782C1FF17600B66FE6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 265596772C1FF17600B66FE6 /* README.md */; };
 		268188E22C1DF02600BDC40A /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 268188E12C1DF02600BDC40A /* ComposableArchitecture */; };
 		268188EB2C1E1A6400BDC40A /* FavoritePosesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268188EA2C1E1A6400BDC40A /* FavoritePosesFeature.swift */; };
 		268188EE2C1E22A800BDC40A /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268188ED2C1E22A800BDC40A /* AppFeature.swift */; };
@@ -45,6 +46,7 @@
 		265596712C1FDE4F00B66FE6 /* YogaCategoryDetailFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCategoryDetailFeatureTests.swift; sourceTree = "<group>"; };
 		265596732C1FE62800B66FE6 /* FavoritePosesFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePosesFeatureTests.swift; sourceTree = "<group>"; };
 		265596752C1FEA3A00B66FE6 /* AppFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeatureTests.swift; sourceTree = "<group>"; };
+		265596772C1FF17600B66FE6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		268188EA2C1E1A6400BDC40A /* FavoritePosesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePosesFeature.swift; sourceTree = "<group>"; };
 		268188ED2C1E22A800BDC40A /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
 		268188EF2C1E22FA00BDC40A /* FavoritePosesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePosesListView.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		2693035E2C1D394900B3C09D = {
 			isa = PBXGroup;
 			children = (
+				265596772C1FF17600B66FE6 /* README.md */,
 				269303692C1D394900B3C09D /* MyYogaPlan */,
 				265596642C1E899500B66FE6 /* UnitTests */,
 				269303682C1D394900B3C09D /* Products */,
@@ -310,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				265596782C1FF17600B66FE6 /* README.md in Resources */,
 				269303722C1D394A00B3C09D /* Preview Assets.xcassets in Resources */,
 				2693036F2C1D394A00B3C09D /* Assets.xcassets in Resources */,
 			);
