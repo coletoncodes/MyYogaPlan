@@ -11,13 +11,13 @@ import ComposableArchitecture
 
 @Reducer
 struct AppFeature {
-    
+    @ObservableState
     struct State: Equatable {
         var tab1 = YogaCategoriesFeature.State()
         var tab2 = FavoritePosesFeature.State()
     }
     
-    enum Action {
+    enum Action: Equatable {
         case tab1(YogaCategoriesFeature.Action)
         case tab2(FavoritePosesFeature.Action)
     }

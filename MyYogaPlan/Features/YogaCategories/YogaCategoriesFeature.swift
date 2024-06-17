@@ -19,7 +19,7 @@ struct YogaCategoriesFeature {
         var path = StackState<YogaCategoryDetailFeature.State>()
     }
     
-    enum Action {
+    enum Action: Equatable {
         case fetchCategories
         case categoriesResponse([YogaCategory])
         case didSelectCategory(YogaCategory)
