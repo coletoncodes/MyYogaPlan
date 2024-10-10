@@ -7,7 +7,6 @@
 
 import Foundation
 import ComposableArchitecture
-import MyYogaCore
 import SwiftUI
 
 struct YogaCategoryDetailView: View {
@@ -115,7 +114,6 @@ struct PoseCellView: View {
             }
             .padding()
         }
-        .roundedRectBackground()
     }
 }
 
