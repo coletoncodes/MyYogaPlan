@@ -4,6 +4,9 @@ This project is a demo application designed to showcase my expertise in iOS deve
 
 It integrates multiple features, such as browsing yoga categories and managing favorite poses to demonstrate clean architecture, state management, and testing capabilities with TCA.
 
+## Demo
+<img src="/.assets/myyoga-demo.gif" alt="Demo" width="300"/>
+
 ## Features
 
 - **Yoga Categories**: Browse and load a variety of yoga categories.
