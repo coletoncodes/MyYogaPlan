@@ -16,8 +16,6 @@ It integrates multiple features, such as browsing yoga categories and managing f
 
 ### MyYogaCore
 
-Contains the YogaAPIClient and necessary models to abstract that aspect away from the core TCA project. Like any modular package, this doesn't assume implementation details from the `client` (in this case the MyYogaPlan) app.
-
 Uses the open source API from this [GitHub repo](https://github.com/alexcumplido/yoga-api)
 
 ### Main Features

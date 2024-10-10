@@ -7,7 +7,6 @@
 
 import ComposableArchitecture
 import Foundation
-import MyYogaCore
 
 struct YogaCategoriesRemoteStore {
     var fetchCategories: () async throws -> [YogaCategory]
@@ -15,16 +14,15 @@ struct YogaCategoriesRemoteStore {
 
 extension YogaCategoriesRemoteStore: DependencyKey {
     
-    static var liveValue: YogaCategoriesRemoteStore {
-        Self {
-            do {
-                return try await YogaAPIClient.shared.fetchCategories().map(\.asYogaCategory)
-            } catch {
-                print("Failed to fetch categories with error: \(error)")
-                throw error
+    static let liveValue = YogaCategoriesRemoteStore(
+            fetchCategories: {
+                let (data, _) = try await URLSession.shared.data(
+                    from: URL(string: "https://yoga-api-nzy4.onrender.com/v1/categories")!
+                )
+                let decoder = JSONDecoder()
+                return try decoder.decode([YogaCategoryDTO].self, from: data).map(\.asYogaCategory)
             }
-        }
-    }
+        )
 }
 
 extension YogaCategoryDTO {
