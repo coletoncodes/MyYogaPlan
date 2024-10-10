@@ -4,6 +4,9 @@ This project is a demo application designed to showcase my expertise in iOS deve
 
 It integrates multiple features, such as browsing yoga categories and managing favorite poses to demonstrate clean architecture, state management, and testing capabilities with TCA.
 
+## Demo
+<img src="/.assets/myyoga-demo.gif" alt="Demo" width="300"/>
+
 ## Features
 
 - **Yoga Categories**: Browse and load a variety of yoga categories.
@@ -15,8 +18,6 @@ It integrates multiple features, such as browsing yoga categories and managing f
 ## Project Structure
 
 ### MyYogaCore
-
-Contains the YogaAPIClient and necessary models to abstract that aspect away from the core TCA project. Like any modular package, this doesn't assume implementation details from the `client` (in this case the MyYogaPlan) app.
 
 Uses the open source API from this [GitHub repo](https://github.com/alexcumplido/yoga-api)
 

@@ -26,7 +26,11 @@ struct YogaCategoriesListView: View {
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("Yoga Categories")
-                .progressView(isShowing: store.isLoading)
+                .overlay {
+                    if store.isLoading {
+                        ProgressView()
+                    }
+                }
                 .onAppear {
                     store.send(.fetchCategories)
                 }
@@ -67,7 +71,6 @@ fileprivate struct YogaCategoryCellView: View {
             Label("", systemImage: "chevron.right")
                 .padding(.trailing)
         }
-        .roundedRectBackground()
         .padding()
     }
 }

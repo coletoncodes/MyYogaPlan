@@ -35,7 +35,7 @@ final class AppFeatureTests: XCTestCase {
         
         let poseToRemove = mockData.first!
         await store.send(.tab2(.didFavoritePose(poseToRemove))) {
-            var updatedPoseToRemove = poseToRemove
+            let updatedPoseToRemove = poseToRemove
             $0.tab2.favoritePoses.remove(updatedPoseToRemove)
         }
         
